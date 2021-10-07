@@ -6,19 +6,45 @@ import styled from "styled-components";
 
 
 const StyledContainer = styled.div `
-
+  background-color: #ebf1f5;
   width: 80%;
   display: flex;
   justify-content: center;
-  padding: auto;
+  margin: auto;
+  margin-top: 5%;
   border: 1px solid #d2d2d2;
   box-shadow: 0px 1px 6px -2px #807f7f;
   border-radius: 8px;
+  &:hover {
+    transition: all 1s ease-in-out;
+    background-color: #e6e5be;
+  }
+
+  h1 {
+    margin: 4%;
+    color: #3c3d3d;
+    &:hover{
+      color: #730003;
+    }
+  }
 
   img {
-    width: 70%;
+    width: 80%;
     border-radius: 10px;
+    &:hover {
+      width: 85%;
+      border-radius: 10px;
+    }
   }
+  p {
+    margin: 3%;
+    color: #3c3d3d;;
+    &:hover{
+      color: #16296e;
+      font-weight: bold;
+    }
+  }
+
 `
 
 
@@ -35,7 +61,7 @@ useEffect(() => {
   axios.get(`${BASE_URL}?api_key=${API_KEY}`)
   .then(res => {
     const {data } = res;
-    console.log(data);
+    // console.log(data);
     setUrl(data.url)
     setTitle(data.title);
     setExplanation(data.explanation);
@@ -56,11 +82,11 @@ useEffect(() => {
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
       </p> */}
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       <img src={url} alt={title}></img>
       <p>{copyright}</p>
       <p>{explanation}</p>
-      
+     
     </div>
     </StyledContainer>
   );
