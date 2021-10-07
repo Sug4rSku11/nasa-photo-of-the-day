@@ -17,7 +17,7 @@ const StyledContainer = styled.div `
   border-radius: 8px;
   &:hover {
     transition: all 1s ease-in-out;
-    background-color: #e6e5be;
+    background-color: #e1cafa;
   }
 
   h1 {
