@@ -2,8 +2,24 @@ import React, {useState, useEffect}  from "react";
 import "./App.css";
 import {BASE_URL, API_KEY} from './index.js';
 import axios from 'axios';
+import styled from "styled-components";
 
 
+const StyledContainer = styled.div `
+
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  padding: auto;
+  border: 1px solid #d2d2d2;
+  box-shadow: 0px 1px 6px -2px #807f7f;
+  border-radius: 8px;
+
+  img {
+    width: 70%;
+    border-radius: 10px;
+  }
+`
 
 
 
@@ -34,17 +50,19 @@ useEffect(() => {
 
 
   return (
+    <StyledContainer>
     <div className="App">
-      <p>
+      {/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p>
+      </p> */}
       <h2>{title}</h2>
       <img src={url} alt={title}></img>
       <p>{copyright}</p>
       <p>{explanation}</p>
       
     </div>
+    </StyledContainer>
   );
 }
 
